@@ -1,0 +1,138 @@
+body {
+	background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+	background-color: rgb(40, 62, 121);
+	margin: auto;
+	text-align: center;
+	color: white;
+	font-family: "Patrick Hand", cursive;
+}
+
+h1 {
+	font-family: "Nerko one";
+	text-shadow: 1px 1px 6px #cf4a55;
+	margin-bottom: 0;
+	font-size: 3.3rem;
+}
+
+h2 {
+	margin: 0px auto 30px auto;
+	text-shadow: 1.5px 1px 5px #a495f0;
+	font-size: 1.4rem;
+}
+footer {
+	opacity: 0.6;
+}
+.row {
+	width: 60%;
+	margin: 0;
+	padding-left: 0;
+	padding-right: 0;
+	position: relative;
+}
+
+.box {
+	position: relative;
+	height: 115px;
+	width: 115px;
+	border: 3px solid black;
+	border-top-left-radius: 100%;
+}
+.big-circle {
+	width: 270px;
+	height: 270px;
+	background-color: rgb(24, 24, 24);
+	border-radius: 50%;
+	margin: auto;
+	z-index: -1;
+	border-width: 5px;
+	border-style: solid;
+	border-color: black;
+	margin-bottom: 20px;
+}
+.center-circle {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	background-color: rgb(24, 24, 24);
+	border-radius: 50%;
+	bottom: 400px;
+	left: 85px;
+	z-index: 5;
+}
+.center-circle:after {
+	pointer-events: none;
+	content: "SIMON";
+	position: absolute;
+	top: 30px;
+	right: 12px;
+	color: white;
+	font-family: "Nerko one", cursive;
+	font-weight: bold;
+	font-size: 2rem;
+	animation-name: light-effect;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes light-effect {
+	0% {
+		text-shadow: 1px 1px 3px white;
+	}
+	25% {
+		text-shadow: 1px 1px 5px white;
+	}
+	50% {
+		text-shadow: 1px 1px 10px white;
+	}
+	75% {
+		text-shadow: 1px 1px 5px white;
+	}
+	100% {
+		text-shadow: 1px 1px 3px white;
+	}
+}
+
+#green {
+	background-color: green;
+	top: 15px;
+	left: 10px;
+	box-shadow: 1px 1px 50px green;
+}
+#red {
+	background-color: red;
+	transform: rotate(90deg);
+	bottom: 106px;
+	left: 140px;
+	box-shadow: 1px 1px 50px red;
+}
+#yellow {
+	background-color: yellow;
+	transform: rotate(-90deg);
+	bottom: 100px;
+	left: 12px;
+	box-shadow: 1px 1px 50px yellow;
+}
+#blue {
+	background-color: blue;
+	transform: rotate(-180deg);
+	top: -220px;
+	left: 138px;
+	box-shadow: 1px 1px 50px blue;
+}
+
+#prueba {
+	width: 100px;
+	height: 100px;
+	background-color: pink;
+	position: absolute;
+	bottom: 10px;
+}
+.game-over {
+	background-color: #8e0e00;
+	background-image: linear-gradient(to right, #1f1c18, #8e0e00, #1f1c18);
+}
+
+footer {
+	position: relative;
+	top: 50px;
+}
