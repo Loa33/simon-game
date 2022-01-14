@@ -1,3 +1,6 @@
+html {
+	min-height: 100%;
+}
 body {
 	background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
 	background-color: rgb(40, 62, 121);
@@ -5,22 +8,30 @@ body {
 	text-align: center;
 	color: white;
 	font-family: "Patrick Hand", cursive;
+	background-repeat: no-repeat;
 }
 
 h1 {
 	font-family: "Nerko one";
 	text-shadow: 1px 1px 6px #cf4a55;
 	margin-bottom: 0;
-	font-size: 3.3rem;
+	font-size: 3.5rem;
+	margin-top: 100px;
 }
 
 h2 {
-	margin: 0px auto 30px auto;
+	margin: 0px auto 150px auto;
 	text-shadow: 1.5px 1px 5px #a495f0;
 	font-size: 1.4rem;
 }
 footer {
 	opacity: 0.6;
+}
+.container {
+	display: block;
+	position: relative;
+	transform: scale(1.8);
+	margin: auto;
 }
 .row {
 	width: 60%;
@@ -134,5 +145,14 @@ footer {
 
 footer {
 	position: relative;
-	top: 50px;
+	top: 150px;
+}
+
+@media (max-width: 480px) {
+	.container {
+		display: block;
+		position: relative;
+		transform: scale(1);
+		margin: auto;
+	}
 }

@@ -16,6 +16,17 @@ function generatePattern() {
 	animateAndSound(randomColor);
 }
 
+if (window.matchMedia("(max-width: 600px)").matches) {
+	$(document).click(function (e) {
+		if (e.button == 0) {
+			if (!flag) {
+				generatePattern();
+				flag = true;
+			}
+		}
+	});
+}
+
 $(".box").click(function () {
 	let userColor = $(this).attr("id");
 	userArray.push(userColor);
