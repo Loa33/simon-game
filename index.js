@@ -4,12 +4,12 @@ let userArray = [];
 let colorsArray = ["green", "red", "yellow", "blue"];
 let level = 0;
 let flag = false;
+let score = [0];
 
 function generatePattern() {
 	userArray = [];
 	level++;
-	console.log(level);
-	$("h2").text("Level " + level);
+	$("#level-press").text("Level " + level);
 	let random = Math.floor(Math.random() * 3 + 1);
 	let randomColor = colorsArray[random];
 	randomArray.push(randomColor);
@@ -17,13 +17,13 @@ function generatePattern() {
 }
 
 if (window.matchMedia("(max-width: 600px)").matches) {
-	$(document).click(function (e) {
-		if (e.button == 0) {
+	$(document).on({
+		touchstart: function () {
 			if (!flag) {
-				generatePattern();
 				flag = true;
+				generatePattern();
 			}
-		}
+		},
 	});
 }
 
@@ -60,14 +60,26 @@ function compare(currentLevel) {
 		audio.muted = false;
 		audio.play();
 		$("body").addClass("game-over");
-		$("h2").text(`Game Over. Press any key to play again.`);
+		$("#level-press").text("Game Over. Press any key to play again. ");
 		setTimeout(() => {
 			$("body").removeClass("game-over");
 		}, 200);
+		maxScore();
 		restart();
 	}
 }
 
+function maxScore() {
+	score.forEach((s) => {
+		if (level > s) {
+			score.push(level);
+			$("#score").text(`${level}`);
+		} else {
+			score.push(level);
+			$("#score").text(`${s}`);
+		}
+	});
+}
 function animateAndSound(id) {
 	let audio;
 	audio = new Audio(`sounds/${id}.mp3`);
@@ -76,5 +88,5 @@ function animateAndSound(id) {
 	audio.play();
 	setTimeout(function () {
 		$(`#${id}`).animate({ opacity: 1 });
-	}, 100);
+	}, 50);
 }

@@ -1,14 +1,16 @@
 html {
-	min-height: 100%;
+	overflow: hidden;
+	height: 100%;
 }
 body {
+	overflow: auto;
 	background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-	background-color: rgb(40, 62, 121);
 	margin: auto;
 	text-align: center;
 	color: white;
 	font-family: "Patrick Hand", cursive;
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 h1 {
@@ -26,6 +28,9 @@ h2 {
 }
 footer {
 	opacity: 0.6;
+}
+.score {
+	margin-top: 120px;
 }
 .container {
 	display: block;
@@ -45,7 +50,7 @@ footer {
 	position: relative;
 	height: 115px;
 	width: 115px;
-	border: 3px solid black;
+	border: 3px solid rgba(255, 255, 255, 0.212);
 	border-top-left-radius: 100%;
 }
 .big-circle {
@@ -143,16 +148,17 @@ footer {
 	background-image: linear-gradient(to right, #1f1c18, #8e0e00, #1f1c18);
 }
 
-footer {
-	position: relative;
-	top: 150px;
-}
-
 @media (max-width: 480px) {
+	h2 {
+		margin: 0px auto 60px auto;
+	}
 	.container {
-		display: block;
-		position: relative;
 		transform: scale(1);
-		margin: auto;
+	}
+	footer {
+		position: relative;
+	}
+	.score {
+		margin-top: 0px;
 	}
 }
